@@ -4,20 +4,12 @@ language:
 
 before_install:
     - pip install --user cpp-coveralls
-    - wget -q https://download.qt.io/official_releases/qt/5.13/5.13.2/qt-opensource-windows-x86-5.13.2.exe
-#    - sudo apt-get update -qq
-#    - sudo apt-get install -y qt5-default qttools5-dev-tools
-#    - sudo apt-get install build-essential
-install:
-  - choco install golang
-  - choco install yasm
-  - ./qt-opensource-windows-x86-5.13.2.exe --script ./.ci/qt_installer_windows.qs
+ #   - wget -q https://download.qt.io/official_releases/qt/5.13/5.13.2/qt-opensource-windows-x86-5.13.2.exe
+    - sudo apt-get update -qq
+    - sudo apt-get install -y qt5-default qttools5-dev-tools
+    - sudo apt-get install build-essential
 
 script:
-    - setx path "%path%;C:\Qt\5.13.2\msvc2017\bin;C:\Go\bin;C:\ProgramData\chocolatey\lib\yasm\tools"
-  - set GOROOT="c:\Go"
-  - set PATH="%PATH%;C:\Qt\5.13.2\msvc2017\bin;C:\Go\bin;C:\ProgramData\chocolatey\lib\yasm\tools"
-  - cmake -DCMAKE_PREFIX_PATH="C:\Qt\5.13.2\msvc2017;C:\Go\bin;C:\ProgramData\chocolatey\lib\yasm\tools"
     - qmake 
     - make
     - ./tests/tests
