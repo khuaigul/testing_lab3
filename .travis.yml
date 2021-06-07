@@ -1,5 +1,5 @@
 language:
-    - cpp
+    - c
 
 before_install:
     - pip install --user cpp-coveralls
