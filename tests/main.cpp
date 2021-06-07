@@ -7,7 +7,7 @@ QStringList decks_names;
  QHash < QString, QHash < QString, QString > > decks;
 QString current_deck;
  QString current_card;
- QHash<QString, QHash<QString, QPair <int, int>>> stats;
+ QHash<QString, QHash<QString, QPair <int, int> > > stats;
  int sgn;
 
 int main(int argc, char *argv[])
