@@ -7,7 +7,7 @@ before_install:
 script:
     - qmake 
     - make
-    - ./tests/tests
+    - ./tests
 addons:
   sonarcloud:
     organization: "khuaigul"
