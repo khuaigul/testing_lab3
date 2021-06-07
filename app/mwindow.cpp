@@ -134,7 +134,7 @@ void on_remove_deck_clicked()
     if (current_deck.isEmpty())
         return;
 
-            QHash<QString, QHash<QString, QString>>::iterator i = decks.begin();
+            QHash<QString, QHash<QString, QString> >::iterator i = decks.begin();
             while (i != decks.end())
             {
                 if (i.key() == current_deck)
@@ -226,7 +226,7 @@ void on_actionQuit_triggered()
             if (!outFile.open(QIODevice::WriteOnly | QIODevice::Text))
                 return;
             QTextStream out(&outFile);
-            QHash<QString, QHash<QString, QString>>::iterator i = decks.begin();
+            QHash<QString, QHash<QString, QString> >::iterator i = decks.begin();
             while (i != decks.end())
             {
                 out << " " + i.key() + "\n";
@@ -255,7 +255,7 @@ void load_stats()
     QString word;
     int trueAns;
     int allAns;
-    QHash<QString, QPair<int, int>> cur;
+    QHash<QString, QPair<int, int> > cur;
     while (!in.atEnd())
     {
         line = in.readLine();
@@ -298,7 +298,7 @@ void load_stats()
 
 void removeDeckStats(QString cd)
 {
-    QHash<QString, QHash<QString, QPair <int, int>>>::iterator it = stats.begin();
+    QHash<QString, QHash<QString, QPair <int, int> > >::iterator it = stats.begin();
     while (it != stats.end())
     {
         if (it.key() == cd)
@@ -312,7 +312,7 @@ void removeDeckStats(QString cd)
 
 void addWordStats(QString cd, QString cw)
 {
-    QHash<QString, QHash<QString, QPair <int, int>>>::iterator it = stats.begin();
+    QHash<QString, QHash<QString, QPair <int, int> > >::iterator it = stats.begin();
     while (it != stats.end())
     {
         if (it.key() == cd)
@@ -326,12 +326,12 @@ void addWordStats(QString cd, QString cw)
 
 void removeWordStats(QString cd, QString cw)
 {
-    QHash<QString, QHash<QString, QPair <int, int>>>::iterator it = stats.begin();
+    QHash<QString, QHash<QString, QPair <int, int> > >::iterator it = stats.begin();
     while (it != stats.end())
     {
         if (it.key() == cd)
         {
-            QHash<QString, QPair <int, int>>::iterator i = stats[it.key()].begin();
+            QHash<QString, QPair <int, int> >::iterator i = stats[it.key()].begin();
             while (i != stats[it.key()].end())
             {
                 if (i.key() == cw)
@@ -348,7 +348,7 @@ void removeWordStats(QString cd, QString cw)
 
 void addDeckStats()
 {
-    QHash<QString, QPair<int, int>> cur_stats;
+    QHash<QString, QPair<int, int> > cur_stats;
     stats.insert(current_deck, cur_stats);
 }
 
@@ -358,11 +358,11 @@ void saveStats()
     if (!outFile.open(QIODevice::WriteOnly | QIODevice::Text))
         return;
     QTextStream out(&outFile);
-    QHash<QString, QHash<QString, QPair <int, int>>>::iterator it = stats.begin();
+    QHash<QString, QHash<QString, QPair <int, int> > >::iterator it = stats.begin();
     while (it != stats.end())
     {
         out << " " << it.key()  << "\n";
-        QHash<QString, QPair <int, int>>::iterator i = stats[it.key()].begin();
+        QHash<QString, QPair <int, int> >::iterator i = stats[it.key()].begin();
         while (i != stats[it.key()].end())
         {
             out << i.key() << "\n" << stats[it.key()][i.key()].first << " " << stats[it.key()][i.key()].second << "\n";
