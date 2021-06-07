@@ -1,0 +1,27 @@
+language:
+    - c
+
+before_install:
+    - pip install --user cpp-coveralls
+
+script:
+    - qmake 
+    - make
+    - ./tests/tests
+addons:
+  sonarcloud:
+    organization: "khuaigul"
+    token: $SONAR_TOKEN
+
+after_success:
+    - coveralls --root . -E ".*external.*" -E ".*tests.*"
+    - build-wrapper-linux-x86-64 --out-dir bw-output make clean all
+    - sonar-scanner
+
+cache:
+    directories:
+    - '$HOME/.m2/repository'
+    - '$HOME/.sonar/cache'
+
+notifications:
+    email: false
