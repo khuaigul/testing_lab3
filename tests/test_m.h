@@ -47,7 +47,7 @@ TEST(changeDeck, noDeck)
 TEST(addDeck, newName)
 {
     QHash<QString, QString> cur;
-    QHash<QString, QHash<QString, QString>> ex;
+    QHash<QString, QHash<QString, QString> > ex;
     cur.insert("apple", "яблоко");
     cur.insert("open", "открыть");
     cur.insert("pen", "ручка");
@@ -66,7 +66,7 @@ TEST(addDeck, newName)
 TEST(addDeck, isDeck)
 {
     QHash<QString, QString> cur;
-    QHash<QString, QHash<QString, QString>> ex;
+    QHash<QString, QHash<QString, QString> > ex;
     cur.insert("apple", "яблоко");
     cur.insert("open", "открыть");
     cur.insert("pen", "ручка");
@@ -84,7 +84,7 @@ TEST(addDeck, isDeck)
 TEST(removeDeck, isDeck)
 {
     QHash<QString, QString> cur;
-    QHash<QString, QHash<QString, QString>> ex;
+    QHash<QString, QHash<QString, QString> > ex;
     cur.insert("apple", "яблоко");
     cur.insert("open", "открыть");
     cur.insert("pen", "ручка");
@@ -95,7 +95,7 @@ TEST(removeDeck, isDeck)
     ex.insert("Korean", cur);
     current_deck = "English";
     cur.clear();
-    QHash<QString, QHash<QString, QString>>::iterator e = ex.begin();
+    QHash<QString, QHash<QString, QString> >::iterator e = ex.begin();
     while (e != ex.end())
     {
         if (e.key() == QString("English"))
@@ -117,7 +117,7 @@ TEST(removeDeck, isDeck)
 TEST(removeDeck, noDeck)
 {
     QHash<QString, QString> cur;
-    QHash<QString, QHash<QString, QString>> ex;
+    QHash<QString, QHash<QString, QString> > ex;
     cur.insert("apple", "яблоко");
     cur.insert("open", "открыть");
     cur.insert("pen", "ручка");
@@ -136,7 +136,7 @@ TEST(removeDeck, noDeck)
 TEST(addCard, newCard)
 {
     QHash<QString, QString> cur;
-    QHash<QString, QHash<QString, QString>> ex;
+    QHash<QString, QHash<QString, QString> > ex;
     cur.insert("apple", "яблоко");
     cur.insert("open", "открыть");
     cur.insert("pen", "ручка");
@@ -156,7 +156,7 @@ TEST(addCard, newCard)
 TEST(addCard, emptyWord)
 {
     QHash<QString, QString> cur;
-    QHash<QString, QHash<QString, QString>> ex;
+    QHash<QString, QHash<QString, QString> > ex;
     cur.insert("apple", "яблоко");
     cur.insert("open", "открыть");
     cur.insert("pen", "ручка");
@@ -175,7 +175,7 @@ TEST(addCard, emptyWord)
 TEST(addCard, existingWord)
 {
     QHash<QString, QString> cur;
-    QHash<QString, QHash<QString, QString>> ex;
+    QHash<QString, QHash<QString, QString> > ex;
     cur.insert("apple", "яблоко");
     cur.insert("open", "открыть");
     cur.insert("pen", "ручка");
@@ -194,7 +194,7 @@ TEST(addCard, existingWord)
 TEST(addCard, emptyTranslate)
 {
     QHash<QString, QString> cur;
-    QHash<QString, QHash<QString, QString>> ex;
+    QHash<QString, QHash<QString, QString> > ex;
     cur.insert("apple", "яблоко");
     cur.insert("open", "открыть");
     cur.insert("pen", "ручка");
@@ -213,7 +213,7 @@ TEST(addCard, emptyTranslate)
 TEST(addCard, noDeck)
 {
     QHash<QString, QString> cur;
-    QHash<QString, QHash<QString, QString>> ex;
+    QHash<QString, QHash<QString, QString> > ex;
     cur.insert("apple", "яблоко");
     cur.insert("open", "открыть");
     cur.insert("pen", "ручка");
@@ -232,7 +232,7 @@ TEST(addCard, noDeck)
 TEST(removeCard, isCard)
 {
     QHash<QString, QString> cur;
-    QHash<QString, QHash<QString, QString>> ex;
+    QHash<QString, QHash<QString, QString> > ex;
     cur.insert("apple", "яблоко");
     cur.insert("open", "открыть");
     ex.insert("English", cur);
@@ -255,7 +255,7 @@ TEST(removeCard, isCard)
 TEST(removeCard, onlyCard)
 {
     QHash<QString, QString> cur;
-    QHash<QString, QHash<QString, QString>> ex;
+    QHash<QString, QHash<QString, QString> > ex;
     cur.insert("apple", "яблоко");
     cur.insert("open", "открыть");
     cur.insert("pen", "ручка");
@@ -277,7 +277,7 @@ TEST(removeCard, onlyCard)
 TEST(removeCard, noCard)
 {
     QHash<QString, QString> cur;
-    QHash<QString, QHash<QString, QString>> ex;
+    QHash<QString, QHash<QString, QString> > ex;
     cur.insert("apple", "яблоко");
     cur.insert("open", "открыть");
     ex.insert("English", cur);
