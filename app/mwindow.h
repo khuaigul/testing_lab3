@@ -21,7 +21,7 @@ extern QStringList decks_names;
 extern QHash < QString, QHash < QString, QString > > decks;
 extern QString current_deck;
 extern QString current_card;
-extern QHash<QString, QHash<QString, QPair <int, int>>> stats;
+extern QHash<QString, QHash<QString, QPair <int, int> > > stats;
 extern int sgn;
 
 
